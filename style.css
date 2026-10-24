@@ -159,6 +159,22 @@ h1,h2,h3,.display{font-weight:300;letter-spacing:-.025em;line-height:1.05}
 .quote p.q{font-size:clamp(24px,2.5vw,34px);font-weight:300;letter-spacing:-.02em;line-height:1.25;color:var(--navy)}
 .quote .body{max-width:520px}
 
+/* ---------- feature, mirrored (penthouse) ---------- */
+.feature.reverse .grid{grid-template-columns:1fr minmax(300px,420px)}
+
+/* ---------- campione: intro + building groups ---------- */
+.cintro{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,5vw,80px);align-items:end;margin-bottom:clamp(48px,6vw,88px)}
+.cintro .body{max-width:520px}
+.group{padding-top:clamp(40px,5vw,64px);border-top:1px solid var(--line)}
+.group + .group{margin-top:clamp(72px,8vw,120px)}
+.ghead{display:grid;grid-template-columns:minmax(260px,420px) 1fr;gap:clamp(28px,4vw,64px);align-items:center;margin-bottom:clamp(36px,4vw,56px)}
+.gimg{aspect-ratio:3/2;border-radius:18px;overflow:hidden;background:var(--paper)}
+.gimg img{width:100%;height:100%;object-fit:cover}
+.gtext h3{margin:14px 0 14px}
+.gtext .body{max-width:560px}
+.gmeta{display:flex;gap:28px;margin-top:22px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--navy)}
+.gmeta span+span{color:var(--mist)}
+
 /* ---------- collection ---------- */
 .cards{display:grid;grid-template-columns:1fr 1fr;gap:28px}
 .card{position:relative;display:block}
@@ -251,6 +267,9 @@ h1,h2,h3,.display{font-weight:300;letter-spacing:-.025em;line-height:1.05}
 .pgallery figure.wide{grid-column:span 2;aspect-ratio:3/2}
 .pgallery img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
 .pgallery figure:hover img{transform:scale(1.03)}
+.pgallery figure.plan{background:#fff;border:1px solid var(--line)}
+.pgallery figure.plan img{object-fit:contain;padding:4%}
+.pgallery figure.plan figcaption{color:var(--navy);text-shadow:none}
 .pgallery figcaption{position:absolute;left:18px;bottom:14px;color:#fff;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;text-shadow:0 1px 10px rgba(0,0,0,.4);opacity:0;transition:opacity .4s}
 .pgallery figure:hover figcaption{opacity:1}
 .note{margin-top:clamp(48px,6vw,80px);padding:clamp(28px,3.5vw,48px);background:var(--paper);border-radius:20px;display:grid;grid-template-columns:200px 1fr;gap:32px}
@@ -299,7 +318,8 @@ h1,h2,h3,.display{font-weight:300;letter-spacing:-.025em;line-height:1.05}
   .menu{display:none}
   .navr .lang{display:none}
   .burger{display:block}
-  .feature .grid,.pbody{grid-template-columns:1fr}
+  .feature .grid,.feature.reverse .grid,.pbody{grid-template-columns:1fr}
+  .feature.reverse .sticky{order:-1}
   .feature .sticky,.pbody .sticky{position:static}
   .footer .top{grid-template-columns:1fr 1fr}
 }
@@ -310,7 +330,7 @@ h1,h2,h3,.display{font-weight:300;letter-spacing:-.025em;line-height:1.05}
   .hero .copy{flex-direction:column;align-items:flex-start;bottom:40px}
   .hero .copy .meta{align-items:flex-start;text-align:left}
   .hero .title h1{font-size:clamp(34px,9vw,56px)}
-  .statement,.about,.contact,.quote,.pintro,.prose,.pnext{grid-template-columns:1fr}
+  .statement,.about,.contact,.quote,.pintro,.prose,.pnext,.cintro,.ghead{grid-template-columns:1fr}
   .stats{grid-template-columns:repeat(3,1fr)}
   .stats .n{font-size:36px}
   .cards{grid-template-columns:1fr;gap:40px}
